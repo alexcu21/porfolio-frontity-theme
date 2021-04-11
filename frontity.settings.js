@@ -2,9 +2,9 @@ const settings = {
   "name": "porfolio-theme",
   "state": {
     "frontity": {
-      "url": "https://test.frontity.org",
-      "title": "Test Frontity Blog",
-      "description": "WordPress installation for Frontity development"
+      "url": "https://dev-portfolio-alex.pantheonsite.io/",
+      "title": "Alex's Porfolio   ",
+      "description": "Alex's porfolio"
     }
   },
   "packages": [
@@ -16,7 +16,7 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://test.frontity.org"
+          "url": "https://dev-portfolio-alex.pantheonsite.io/"
         }
       }
     },
