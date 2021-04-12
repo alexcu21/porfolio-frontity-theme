@@ -8,7 +8,7 @@ const Technologies = ({state, techId}) => {
         <ul>{techId.map((item)=>{
 
             return(
-                    <li key={techId}> {techName[item].name}</li>
+                    <li key={techId + techName[item].name}> {techName[item].name}</li>
 
             )
         })}</ul>
