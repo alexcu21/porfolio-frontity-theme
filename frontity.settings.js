@@ -16,7 +16,22 @@ const settings = {
       "name": "@frontity/wp-source",
       "state": {
         "source": {
-          "url": "https://dev-portfolio-alex.pantheonsite.io/"
+          "url": "https://dev-portfolio-alex.pantheonsite.io",
+          "homepage": "/home",
+
+          "postTypes": [
+            {
+              type:"project",
+              endpoint:"project",
+              archive:"/project-archive"
+            }
+          ],
+          "taxonomies": [
+            {
+              taxonomy:"technology",
+              endpoint:"technology",
+              postTypeEndpoint:"project"
+            }]
         }
       }
     },

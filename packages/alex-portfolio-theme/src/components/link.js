@@ -22,5 +22,5 @@ export default connect(Link)
 const Anchor = styled.a`
   color:steelblue;
   text-decoration: none;
-  
+  +
 `

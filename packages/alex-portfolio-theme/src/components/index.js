@@ -4,6 +4,8 @@ import Link from './link';
 import List from './list';
 import Post from "./post";
 import Page from './page';
+import Header from "./header";
+import Projects from "../pages/projects";
 
 const Root = ({state, actions}) => {
     const data = state.source.get(state.router.link)
@@ -23,28 +25,18 @@ const Root = ({state, actions}) => {
             />
             <Head>
                 <title>Alex Cuadra's Portfolio</title>
-                <meta name="description" conten="This is my portfolio"/>
+                <meta name="description" content="This is my portfolio"/>
             </Head>
-            <Header isPostType={data.isPostType}>
+            <HeaderContainer>
                 <HeaderContent>
-                    <h1>Alex's portfolio during 2021 - 2022</h1>
-                    <p>current URL: {state.router.link}</p>
-                    { state.theme.isMenuOpen ? (
-                        <>
-                            <button onClick={actions.theme.closeMenu}>close</button>
-                            <Menu>
-                                <Link href="/">Home</Link>
-                                <Link href="/page/2">Page 2</Link>
-                                <Link href="/lorem-ipsum">Lorem</Link>
-                            </Menu>
-                        </>
-                    ) : (<button onClick={actions.theme.openMenu}>open</button>)}
-
+                    <Header/>
                 </HeaderContent>
-            </Header>
+            </HeaderContainer>
 
             <Main>
-                {data.isArchive && <List/>}
+
+                {data.isPostTypeArchive && <Projects/>}
+                {/*{data.isArchive && <List/>}*/}
                 {data.isPost && <Post/>}
                 {data.isPage && <Page/>}
             </Main>
@@ -54,11 +46,10 @@ const Root = ({state, actions}) => {
 
 export default connect(Root);
 
-const Header = styled.header`
+const HeaderContainer = styled.header`
   background-color: #eee;
   border-width: 0 0 8px 0;
   border-style: solid;
-  border-color:${props => props.isPostType ? 'lightseagreen' : 'maroon'} ;
 `
 
 const HeaderContent = styled.div`
@@ -73,7 +64,7 @@ const Menu = styled.nav`
   margin-top: 1em;
   & > div{
     margin-right: 1em;
-    
+
   }
 `
 
@@ -81,7 +72,7 @@ const Main = styled.main`
   max-width: 800px;
   padding: 1em;
   margin: auto;
-  
+
   img{
     max-width: 100%;
   }
