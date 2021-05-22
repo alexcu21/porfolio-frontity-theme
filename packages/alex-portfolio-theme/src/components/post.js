@@ -1,20 +1,31 @@
 import React from 'react';
 import {connect, styled} from "frontity";
+import title from "@frontity/mars-theme/src/components/title";
 
-const Post = ({state}) => {
+const Post = ({state, element}) => {
     const data = state.source.get(state.router.link)
     const post = state.source[data.type][data.id]
     const author = state.source.author[post.author]
-    return(
-        <div>
-            <h2>{post.title.rendered}</h2>
-            <PostInfo>
-                <p><strong>Posted:</strong>{post.date}</p>
-                <p><strong>Author:</strong>{author.name}</p>
-            </PostInfo>
-            <div dangerouslySetInnerHTML={ {__html: post.content.rendered} }  />
-        </div>
-    )
+    if(element === 'project'){
+        return (
+            <>
+                <h2 dangerouslySetInnerHTML= {{__html:post.title.rendered}}></h2>
+                <p dangerouslySetInnerHTML = {{__html:post.content.rendered}}></p>
+            </>
+        )
+
+    }else{
+        return(
+            <div>
+                <h2>{post.title.rendered}</h2>
+                <PostInfo>
+                    <p><strong>Posted:</strong>{post.date}</p>
+                    <p><strong>Author:</strong>{author.name}</p>
+                </PostInfo>
+                <div dangerouslySetInnerHTML={ {__html: post.content.rendered} }  />
+            </div>
+        )
+    }
 }
 
 export default connect(Post)

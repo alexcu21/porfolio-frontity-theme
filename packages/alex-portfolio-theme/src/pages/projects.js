@@ -8,7 +8,7 @@ const Projects = ({state}) => {
     return(
         <>
             <h2>Projects</h2>
-            <p>Projects I've participated ({data.items.length})</p>
+            <p>Projects I've participated</p>
             {
                 data.items.map( ({id}) => {
                     const project = state.source.project[id]

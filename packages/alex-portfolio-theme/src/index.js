@@ -1,4 +1,5 @@
-import Root from './components'
+import React from 'react'
+import Root from './Root'
 
 export default {
   name: "alex-portfolio-theme",

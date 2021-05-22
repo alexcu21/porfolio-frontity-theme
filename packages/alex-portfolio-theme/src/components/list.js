@@ -5,16 +5,18 @@ import Link from "./link";
 const List = ({state}) => {
     const data = state.source.get(state.router.link)
     return(
-        <Items>
-            {data.items.map(item => {
-                const post = state.source.post[item.id]
-                return(
-                    <Link key={item.id} href={post.link}>
-                        {post.title.rendered}
-                    </Link>
-                )
-            })}
-        </Items>
+        <>
+            <Items>
+                {data.items.map(item => {
+                    const post = state.source.post[item.id]
+                    return(
+                        <Link key={item.id} href={post.link}>
+                            {post.title.rendered}
+                        </Link>
+                    )
+                })}
+            </Items>
+        </>
     )
 }
 

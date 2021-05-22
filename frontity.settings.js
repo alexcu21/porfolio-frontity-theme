@@ -17,8 +17,6 @@ const settings = {
       "state": {
         "source": {
           "url": "https://dev-portfolio-alex.pantheonsite.io",
-          "homepage": "/home",
-
           "postTypes": [
             {
               type:"project",
@@ -31,7 +29,8 @@ const settings = {
               taxonomy:"technology",
               endpoint:"technology",
               postTypeEndpoint:"project"
-            }]
+            }
+            ]
         }
       }
     },
