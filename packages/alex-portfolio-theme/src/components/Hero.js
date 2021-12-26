@@ -97,6 +97,8 @@ const SkillList = styled.div`
   text-align: center;
   display: flex;
   justify-content: space-between;
+  gap:5rem;
+  margin:3rem 0;
   p{
     font-weight: 700;
     font-size: 1.2rem;
