@@ -57,7 +57,7 @@ export default connect(Hero)
 const HeroContent = styled.div`
   text-align: center;
   background-color: ${variablesCSS.pink};
-  max-width: 800px;
+  max-width: 70rem;
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
