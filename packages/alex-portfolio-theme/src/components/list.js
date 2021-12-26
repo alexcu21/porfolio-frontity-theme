@@ -49,8 +49,10 @@ const Items = styled.div`
   
   grid-template-columns: 1fr 1fr;
     a{
-      color: ${variablesCSS.white};
+      color: ${variablesCSS.black};
       font-size: 1.2rem;
+      font-weight: bold;
+      margin: 1.1rem 0;
     }
   & > div{
     margin: 12px 0;
@@ -59,7 +61,8 @@ const Items = styled.div`
 `
 const PostWrapper = styled.div`
   padding: 2rem;
-  background-color:${variablesCSS.purple};
+  background-color:${variablesCSS.pink};
   margin: 1rem!important;
-  box-shadow: 12px 12px ${variablesCSS.pink};
+  box-shadow: 12px 12px ${variablesCSS.purple};
+  
 `
