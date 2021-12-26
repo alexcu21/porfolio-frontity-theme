@@ -5,9 +5,12 @@ import Post from "./components/post";
 import Page from './components/page';
 import Home  from './pages/home'
 import Header from "./components/header";
+import Hero from "./components/Hero"
 import Projects from "./pages/projects";
 import Loading from "./components/loading";
 import Project from "./components/project";
+import Footer from "./components/footer";
+import variablesCSS from './components/css/variablesCss'
 
 const Root = ({state, actions}) => {
     const data = state.source.get(state.router.link)
@@ -29,7 +32,10 @@ const Root = ({state, actions}) => {
                     box-sizing: border-box;
                   }
                   html{
-                    font-family: sans-serif;
+                    font-family: ${variablesCSS.secondaryFont};
+                  }
+                  h1, h2, h3, h4, h5, h5{
+                  font-family: ${variablesCSS.primaryFont};
                   }
                 `}
             />
@@ -40,6 +46,7 @@ const Root = ({state, actions}) => {
             <HeaderContainer>
 
                 <Header />
+                <Hero/>
 
             </HeaderContainer>
 
@@ -53,6 +60,9 @@ const Root = ({state, actions}) => {
                     {data.isProject && <Post element="project"/>}
                 </Switch>
             </Main>
+            <FooterContainer>
+                <Footer/>
+            </FooterContainer>
         </>
     );
 }
@@ -60,7 +70,8 @@ const Root = ({state, actions}) => {
 export default connect(Root);
 
 const HeaderContainer = styled.header`
-  background-color: #FED9DA;
+  background-color: ${variablesCSS.pink};
+  padding: 2em 7em 4em 7em;
 `
 
 const HeaderContent = styled.div`
@@ -70,7 +81,7 @@ const HeaderContent = styled.div`
 `
 
 const Main = styled.main`
-  max-width: 800px;
+  max-width: 80vw;
   padding: 1em;
   margin: auto;
 
@@ -84,4 +95,12 @@ const Main = styled.main`
     line-height: 1.25em;
     margin-bottom: 0.75em;
   }
+`
+
+const FooterContainer = styled.div`
+  height: 40vh;
+ background-color: ${variablesCSS.purple};
+  color:${variablesCSS.white};
+  display: flex;
+  justify-content: center;
 `

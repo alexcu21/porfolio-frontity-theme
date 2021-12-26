@@ -1,6 +1,5 @@
 import React from 'react';
 import {connect, styled} from "frontity";
-import title from "@frontity/mars-theme/src/components/title";
 
 const Post = ({state, element}) => {
     const data = state.source.get(state.router.link)

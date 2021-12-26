@@ -2,6 +2,7 @@ import React from "react";
 import { styled, connect, Global } from "frontity";
 import { CloseIcon, HamburgerIcon } from "./menu-icon";
 import MenuModal from "./menu-modal";
+import variablesCSS from "./css/variablesCss";
 
 function MobileMenu({ state, actions }) {
     const { isMobileMenuOpen } = state.theme;
@@ -31,12 +32,12 @@ const MenuToggle = styled.button`
   top: 24px;
   background: transparent;
   border: 0;
-  color: white;
+  color: ${variablesCSS.white};
   z-index: 5;
   height: 40px;
   width: 40px;
   display: none;
-  @media (max-width: 560px) {
+  @media (max-width: ${variablesCSS.mobil}) {
     display: flex;
     align-items: center;
     justify-content: center;

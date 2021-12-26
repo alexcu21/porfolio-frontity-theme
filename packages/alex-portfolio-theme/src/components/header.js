@@ -1,6 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
+import variablesCSS from "./css/variablesCss";
 
 
 const Header = ({ state }) => {
@@ -18,12 +19,16 @@ const Header = ({ state }) => {
 export default connect(Header);
 
 const Container = styled.div`
-  width: 848px;
-  max-width: 100%;
+  max-width: 70rem;
+  width: 100%;
   box-sizing: border-box;
   padding: 10px;
-  color: #fff;
+  color: ${variablesCSS.white};
   display: flex;
   flex-direction: row;
+  a{
+    font-weight: bold;
+    font-size: 1.5rem;
+  }
 `;
 

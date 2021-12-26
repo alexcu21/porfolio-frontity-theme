@@ -1,6 +1,7 @@
 import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
+import variablesCSS from "./css/variablesCss"
 
 /**
  * Navigation Component
@@ -25,7 +26,7 @@ const NavContainer = styled.nav`
   padding: 0 24px;
   margin: 0;
   overflow-x: auto;
-  @media screen and (max-width: 560px) {
+  @media screen and (max-width: ${variablesCSS.mobil}) {
     display: none;
   }
 `;
@@ -33,7 +34,7 @@ const NavContainer = styled.nav`
 const NavItem = styled.div`
   padding: 0;
   margin: 0 16px;
-  color: #fff;
+  color: ${variablesCSS.white};
   font-size: 0.9em;
   box-sizing: border-box;
   flex-shrink: 0;
@@ -44,7 +45,7 @@ const NavItem = styled.div`
     border-bottom-color: transparent;
     /* Use for semantic approach to style the current link */
     &[aria-current="page"] {
-      border-bottom-color: #fff;
+      border-bottom-color: ${variablesCSS.white};
     }
   }
   &:first-of-type {
