@@ -69,12 +69,20 @@ const ArticleProject = styled.article`
   @media ${variablesCSS.mobilQuery}{
     flex-direction: column;
   }
+
+  @media ${variablesCSS.tabletQuery}{
+    flex-direction: column;
+  }
+  
   &:nth-child(odd){
     flex-direction: row-reverse;
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
     color:${variablesCSS.white};
     @media ${variablesCSS.mobilQuery}{
+      flex-direction: column;
+    }
+    @media ${variablesCSS.tabletQuery}{
       flex-direction: column;
     }
     h4{
@@ -119,6 +127,9 @@ const ArticleProject = styled.article`
       max-width: 30rem;
       width: 100%;
       height: auto;
+      @media ${variablesCSS.tabletQuery}{
+        max-width: 100%;
+      }
     }
   
 `

@@ -50,6 +50,9 @@ const Items = styled.div`
   @media ${variablesCSS.mobilQuery}{
     grid-template-columns: 1fr;
   }
+  @media ${variablesCSS.tabletQuery}{
+    grid-template-columns: 1fr;
+  }
     a{
       color: ${variablesCSS.black};
       font-size: 1.2rem;
