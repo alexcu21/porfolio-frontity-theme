@@ -26,6 +26,9 @@ const Container = styled.div`
   color: ${variablesCSS.white};
   display: flex;
   flex-direction: row;
+  @media ${variablesCSS.mobilQuery}{
+    display: none;
+  }
   a{
     font-weight: bold;
     font-size: 1.5rem;

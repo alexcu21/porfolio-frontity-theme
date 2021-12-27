@@ -46,8 +46,10 @@ const Items = styled.div`
   display: grid;
   max-width: 75rem;
   margin: 0 auto;
-  
   grid-template-columns: 1fr 1fr;
+  @media ${variablesCSS.mobilQuery}{
+    grid-template-columns: 1fr;
+  }
     a{
       color: ${variablesCSS.black};
       font-size: 1.2rem;

@@ -72,6 +72,9 @@ export default connect(Root);
 const HeaderContainer = styled.header`
   background-color: ${variablesCSS.pink};
   padding: 2em 7em 4em 7em;
+  @media ${variablesCSS.mobilQuery}{
+    padding:0.6rem;
+  }
 `
 
 const HeaderContent = styled.div`
@@ -84,6 +87,10 @@ const Main = styled.main`
   max-width: 80vw;
   padding: 1em;
   margin: auto;
+  @media ${variablesCSS.mobilQuery}{
+    max-width:98vw;
+    padding:0.5rem;
+  }
 
   img{
     max-width: 100%;
@@ -103,4 +110,7 @@ const FooterContainer = styled.div`
   color:${variablesCSS.white};
   display: flex;
   justify-content: center;
+  @media ${variablesCSS.mobilQuery}{  
+    height: 50vh;
+  }
 `

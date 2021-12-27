@@ -66,11 +66,17 @@ const ProjectListStyles = styled.div`
 `
 
 const ArticleProject = styled.article`
+  @media ${variablesCSS.mobilQuery}{
+    flex-direction: column;
+  }
   &:nth-child(odd){
     flex-direction: row-reverse;
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
     color:${variablesCSS.white};
+    @media ${variablesCSS.mobilQuery}{
+      flex-direction: column;
+    }
     h4{
       color: ${variablesCSS.white};
     }
@@ -119,6 +125,10 @@ const ArticleProject = styled.article`
 const Info = styled.div`
   padding: 1.2rem;
   margin-left: 1rem;
+  @media ${variablesCSS.mobilQuery}{
+    padding:0.7rem;
+    margin-left:0;
+  }
 `
 
 const InfoWrapper = styled.div`

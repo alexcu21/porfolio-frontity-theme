@@ -68,6 +68,9 @@ const FooterWrapper = styled.footer`
   align-items: center;
   max-width: 80vw;
   width: 100%;
+  @media ${variablesCSS.mobilQuery}{
+    flex-direction:column;
+  }
 `
 
 const ContactWrapper = styled.div`

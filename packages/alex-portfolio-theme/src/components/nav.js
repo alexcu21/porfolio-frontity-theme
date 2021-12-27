@@ -26,7 +26,7 @@ const NavContainer = styled.nav`
   padding: 0 24px;
   margin: 0;
   overflow-x: auto;
-  @media screen and (max-width: ${variablesCSS.mobil}) {
+  @media ${variablesCSS.mobilQuery} {
     display: none;
   }
 `;

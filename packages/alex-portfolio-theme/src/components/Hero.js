@@ -83,6 +83,9 @@ const HeadingLine = styled.div`
     margin: 3.5rem auto;
     font-family: ${variablesCSS.primaryFont};
     font-weight: 700;
+    @media ${variablesCSS.mobilQuery}{
+      font-size: 4rem;
+    }
   }
 `
 
@@ -99,6 +102,9 @@ const SkillList = styled.div`
   justify-content: space-between;
   gap:5rem;
   margin:3rem 0;
+  @media ${variablesCSS.mobilQuery}{
+    flex-direction: column;
+  }
   p{
     font-weight: 700;
     font-size: 1.2rem;
