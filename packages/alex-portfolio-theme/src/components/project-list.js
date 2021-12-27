@@ -27,11 +27,17 @@ const ProjectList = ({state, actions}) => {
                                         <Link href={project.link}>
                                             <h4 dangerouslySetInnerHTML={{__html:project.title.rendered}}></h4>
                                         </Link>
+                                        <TechWrapper>
+                                                <Technologies
+
+                                                    techId={project.technology}
+                                                />
+                                        </TechWrapper>
                                         <p dangerouslySetInnerHTML={{__html:project.content.rendered}}></p>
                                     </InfoWrapper>
                                     <LinksWrapper>
-                                        <a className="btn" href={project.acf.github_link}>See Project</a>
-                                        <a className="btn" href={project.acf.project_link}>See Code</a>
+                                        <a className="btn" href={project.acf.project_link}>See Project</a>
+                                        <a className="btn" href={project.acf.github_link}>See Code</a>
                                     </LinksWrapper>
                                 </Info>
 
@@ -48,7 +54,7 @@ const ProjectList = ({state, actions}) => {
 export default connect(ProjectList)
 
 const ProjectListStyles = styled.div`
-    max-width: 70rem;
+    max-width: 75rem;
     margin: 0 auto;
   h2{
     text-align: center;
@@ -60,13 +66,20 @@ const ProjectListStyles = styled.div`
 `
 
 const ArticleProject = styled.article`
-  &:nth-child(even){
+  &:nth-child(odd){
     flex-direction: row-reverse;
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
     color:${variablesCSS.white};
     h4{
       color: ${variablesCSS.white};
+    }
+    li{
+      background-color: ${variablesCSS.pink};
+      color: ${variablesCSS.black};
+      padding: 0.2rem 0.5rem;
+      border-radius: 1rem;
+      font-weight: bold;
     }
 
     
@@ -88,7 +101,14 @@ const ArticleProject = styled.article`
   margin: 4rem 1rem;
   background-color: #FED9DA;
   box-shadow: 12px 12px ${variablesCSS.purple};
-    
+
+  li{
+    background-color: ${variablesCSS.purple};
+    color: ${variablesCSS.white};
+    padding: 0.2rem 0.5rem;
+    border-radius: 1rem;
+    font-weight: bold;
+  }
     img{
       max-width: 30rem;
       width: 100%;
@@ -127,6 +147,18 @@ const LinksWrapper = styled.div`
     }
   }
 
-  
+`
+
+const TechWrapper = styled.div`
+  width: 100%;
+  ul{
+    display: flex;
+    justify-content: flex-start;
+    list-style: none;
+    margin-bottom: 1rem;
+    li{
+      margin-right: 1rem;
+    }
+  }
 `
 
