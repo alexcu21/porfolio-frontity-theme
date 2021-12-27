@@ -14,7 +14,7 @@ const List = ({state}) => {
                     {data.items.map(item => {
                         const post = state.source.post[item.id]
                         return(
-                            <PostWrapper>
+                            <PostWrapper key={item.id}>
                                 <FeaturedMedia id={post.featured_media} />
                                 <Link key={item.id} href={post.link}>
                                     {post.title.rendered}
@@ -32,22 +32,27 @@ const List = ({state}) => {
 export default connect(List)
 
 const HomePostListStyles=styled.div`
-  margin-top: 2rem;
+  margin-top: 7rem;
   h2{
     text-align: center;
     font-size: 3rem;
     color: ${variablesCSS.purple};
     letter-spacing: 0.01em;
-    margin: 3.5rem auto;
+    margin: 2rem auto;
   }
 `
 
 const Items = styled.div`
   display: grid;
-  max-width: 70rem;
+  max-width: 75rem;
   margin: 0 auto;
-  
   grid-template-columns: 1fr 1fr;
+  @media ${variablesCSS.mobilQuery}{
+    grid-template-columns: 1fr;
+  }
+  @media ${variablesCSS.tabletQuery}{
+    grid-template-columns: 1fr;
+  }
     a{
       color: ${variablesCSS.black};
       font-size: 1.2rem;
