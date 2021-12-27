@@ -136,6 +136,7 @@ const ArticleProject = styled.article`
 const Info = styled.div`
   padding: 1.2rem;
   margin-left: 1rem;
+  max-width: 42rem;
   @media ${variablesCSS.mobilQuery}{
     padding:0.7rem;
     margin-left:0;
