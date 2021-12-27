@@ -141,6 +141,9 @@ const Info = styled.div`
     padding:0.7rem;
     margin-left:0;
   }
+  @media ${variablesCSS.tabletQuery}{
+    max-width: 100%;
+  }
 `
 
 const InfoWrapper = styled.div`
@@ -166,6 +169,9 @@ const LinksWrapper = styled.div`
     &:hover{
       background-color:${variablesCSS.purple};
       color:${variablesCSS.pink};
+    }
+    @media ${variablesCSS.mobilQuery}{
+      margin:0.5rem;
     }
   }
 
