@@ -2,24 +2,20 @@ import React, {useEffect}from "react"
 import {connect, styled} from "frontity";
 import variablesCSS from "./css/variablesCss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { fab } from '@fortawesome/free-brands-svg-icons'
 
 const Hero = ({state, actions}) => {
     const data = state.source.get(state.router.link)
     const pageHome = state.source.page[9]
-
     const isHomePage = data.isHome
-
-    console.log(isHomePage)
 
     useEffect(() => {
         actions.source.fetch("/home")
     }, [])
 
-    if(isHomePage){
+
         return(
 
-            <HeroContent>
+            <HeroContent display={()=>{return isHomePage ? 'block' : 'none'}}>
                 <ProfilePhoto>
                     {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
                 </ProfilePhoto>
@@ -55,26 +51,20 @@ const Hero = ({state, actions}) => {
                 </SkillList>
             </HeroContent>
         )
-    }else{
-        return (<HeroEmpty></HeroEmpty>)
-    }
+
 }
 
 export default connect(Hero)
 
-const isPageHomeActive = {
-    true: true,
-    false: false
-}
-
 const HeroContent = styled.div`
   text-align: center;
   background-color: ${variablesCSS.pink};
+  color: ${props => props.color};
   max-width: 70rem;
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
-  display:block;
+  display:${props => props.display};
 `
 const ProfilePhoto = styled.div`
   max-width: 100%;
