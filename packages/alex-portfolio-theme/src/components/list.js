@@ -1,6 +1,6 @@
 import React from 'react'
 import {connect, styled} from "frontity";
-import Link from "./link";
+import Link from "@frontity/components/link";
 import FeaturedMedia from "./featured-media";
 import variablesCSS from "./css/variablesCss";
 
@@ -9,14 +9,14 @@ const List = ({state}) => {
     return(
         <>
             <HomePostListStyles>
-                <h2>Latest Posts</h2>
+                <h2>Posts You Must Read</h2>
                 <Items>
                     {data.items.map(item => {
                         const post = state.source.post[item.id]
                         return(
                             <PostWrapper key={item.id}>
                                 <FeaturedMedia id={post.featured_media} />
-                                <Link key={item.id} href={post.link}>
+                                <Link key={item.id} link={post.link}>
                                     {post.title.rendered}
                                 </Link>
 

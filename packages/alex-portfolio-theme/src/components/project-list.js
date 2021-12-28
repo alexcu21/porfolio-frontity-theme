@@ -1,8 +1,7 @@
 import {useEffect} from 'react'
 import {connect, styled} from "frontity";
 import Technologies from "../components/technologies";
-import Project from "./project";
-import Link from "./link";
+import Link from "@frontity/components/link";
 import variablesCSS from './css/variablesCss'
 
 const ProjectList = ({state, actions}) => {
@@ -24,7 +23,7 @@ const ProjectList = ({state, actions}) => {
                                 <img src={project.acf.screenshot.url} alt={project.acf.screenshot.name}/>
                                 <Info>
                                     <InfoWrapper>
-                                        <Link href={project.link}>
+                                        <Link link={project.link}>
                                             <h4 dangerouslySetInnerHTML={{__html:project.title.rendered}}></h4>
                                         </Link>
                                         <TechWrapper>

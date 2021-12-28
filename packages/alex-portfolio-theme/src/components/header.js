@@ -9,9 +9,18 @@ const Header = ({ state }) => {
     return (
         <>
             <Container>
-                <Link href='/'>Home</Link>
-                <Link href='/all-projects'>Projects</Link>
-                <Link href='/archive'>Blog</Link>
+                {state.theme.menu.map(([name, link]) => {
+                    // Check if the link matched the current page url
+                    const isCurrentPage = state.router.link === link;
+                    return (
+                        <NavItem key={name}>
+                            {/* If link url is the current page, add `aria-current` for a11y */}
+                            <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
+                                {name}
+                            </Link>
+                        </NavItem>
+                    );
+                })}
             </Container>
         </>
     );
@@ -36,4 +45,16 @@ const Container = styled.div`
     font-size: 1.5rem;
   }
 `;
+
+const NavItem = styled.div`
+  a{
+    cursor: pointer;
+    color:${variablesCSS.purple};
+    text-decoration: none;
+    margin: 1em;
+    &:hover{
+      text-decoration: underline;
+    }
+  }
+`
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import {connect, styled} from "frontity";
+import Technologies from "./technologies";
 
 const Post = ({state, element}) => {
     const data = state.source.get(state.router.link)
@@ -7,10 +8,16 @@ const Post = ({state, element}) => {
     const author = state.source.author[post.author]
     if(element === 'project'){
         return (
-            <>
-                <h2 dangerouslySetInnerHTML= {{__html:post.title.rendered}}></h2>
-                <p dangerouslySetInnerHTML = {{__html:post.content.rendered}}></p>
-            </>
+            <ProjectWrapper>
+                <ImageContainer>
+                    <img src={post.acf.screenshot.url} alt={post.acf.screenshot.name}/>
+                </ImageContainer>
+                <ProjectInfo>
+                    <Technologies techId={post.technology} />
+                    <h2 dangerouslySetInnerHTML= {{__html:post.title.rendered}}></h2>
+                    <p dangerouslySetInnerHTML = {{__html:post.content.rendered}}></p>
+                </ProjectInfo>
+            </ProjectWrapper>
         )
 
     }else{
@@ -39,4 +46,14 @@ const PostInfo = styled.div`
   & > p{
     margin: 0;
   }
+`
+
+const ProjectWrapper = styled.div`
+
+`
+const ImageContainer = styled.div`
+
+`
+const ProjectInfo = styled.div`
+
 `

@@ -9,6 +9,10 @@ export default {
   state: {
     theme: {
       isMenuOpen:false,
+      menu:[
+          ['Home', '/'],
+          ['My Projects', '/all-projects']
+      ],
     }
   },
   actions: {

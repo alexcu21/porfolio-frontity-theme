@@ -7,9 +7,7 @@ import Home  from './pages/home'
 import Header from "./components/header";
 import Hero from "./components/Hero"
 import Projects from "./pages/projects";
-import Blog from "./pages/blog";
 import Loading from "./components/loading";
-import Project from "./components/project";
 import Footer from "./components/footer";
 import variablesCSS from './components/css/variablesCss'
 
@@ -18,7 +16,7 @@ const Root = ({state, actions}) => {
 
     useEffect(() => {
         actions.source.fetch("/project")
-        actions.source.fetch("/project-archive")
+        actions.source.fetch("/all-projects")
         actions.source.fetch("/home")
         actions.source.fetch("/archive")
 
@@ -55,9 +53,8 @@ const Root = ({state, actions}) => {
             <Main>
                 <Switch>
                     <Loading when={data.isFetching} />
-                    {data.isProjectArchive && <Projects/>}
                     <Home when={data.isHome}/>
-                    {data.isArchive && <Blog/>}
+                    {data.isProjectArchive && <Projects/>}
                     {data.isPost && <Post/>}
                     {data.isPage && <Page/>}
                     {data.isProject && <Post element="project"/>}

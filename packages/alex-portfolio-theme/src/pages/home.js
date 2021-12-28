@@ -2,7 +2,7 @@ import React, { useEffect } from 'react'
 import {connect, styled} from "frontity";
 import ProjectList from "../components/project-list";
 import List from "../components/list";
-import Hero from "../components/Hero";
+
 
 
 const Home = ({state, actions}) => {
@@ -11,7 +11,7 @@ const Home = ({state, actions}) => {
 
     useEffect(() => {
         actions.source.fetch("/project")
-        actions.source.fetch("/projects-archive")
+        actions.source.fetch("/all-projects")
         actions.source.fetch("/home")
 
     }, [])
