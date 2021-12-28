@@ -74,7 +74,7 @@ const ArticleProject = styled.article`
     flex-direction: column;
   }
   
-  &:nth-child(odd){
+  &:nth-of-type(odd){
     flex-direction: row-reverse;
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
@@ -136,9 +136,13 @@ const ArticleProject = styled.article`
 const Info = styled.div`
   padding: 1.2rem;
   margin-left: 1rem;
+  max-width: 42rem;
   @media ${variablesCSS.mobilQuery}{
     padding:0.7rem;
     margin-left:0;
+  }
+  @media ${variablesCSS.tabletQuery}{
+    max-width: 100%;
   }
 `
 
@@ -165,6 +169,9 @@ const LinksWrapper = styled.div`
     &:hover{
       background-color:${variablesCSS.purple};
       color:${variablesCSS.pink};
+    }
+    @media ${variablesCSS.mobilQuery}{
+      margin:0.5rem;
     }
   }
 
