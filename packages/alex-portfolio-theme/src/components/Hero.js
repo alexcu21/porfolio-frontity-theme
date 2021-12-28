@@ -119,6 +119,4 @@ const SkillList = styled.div`
     color: ${variablesCSS.purple};
   }
 `
-const HeroEmpty = styled.div`
-  display: none;
-`
+
