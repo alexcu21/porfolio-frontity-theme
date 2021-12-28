@@ -2,6 +2,7 @@ import React, { useEffect } from 'react'
 import {connect, styled} from "frontity";
 import ProjectList from "../components/project-list";
 import List from "../components/list";
+import Hero from "../components/Hero";
 
 
 const Home = ({state, actions}) => {

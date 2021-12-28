@@ -2,54 +2,56 @@ import React, {useEffect}from "react"
 import {connect, styled} from "frontity";
 import variablesCSS from "./css/variablesCss";
 import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { fab } from '@fortawesome/free-brands-svg-icons'
 
 const Hero = ({state, actions}) => {
-
+    const data = state.source.get(state.router.link)
     const pageHome = state.source.page[9]
+    const isHomePage = data.isHome
 
     useEffect(() => {
         actions.source.fetch("/home")
     }, [])
 
-    return(
 
-        <HeroContent>
-            <ProfilePhoto>
-                {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
-            </ProfilePhoto>
-            <HeadingLine>
-                {typeof pageHome === "undefined" ? null :  <h1>{pageHome.acf.heading}</h1>}
-            </HeadingLine>
-            <SubHeadingLine>
-                {typeof pageHome === "undefined" ? null :  <p>{pageHome.acf.sub_heading}</p>}
-            </SubHeadingLine>
-            <SkillList>
-                {
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
-                            <p>{pageHome.acf.skill_1.skill_description}</p>
-                        </div>
-                }
-                {
+        return(
 
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
-                            <p>{pageHome.acf.skill_2.skill_description}</p>
-                        </div>
-                }
-                {
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
-                            <p>{pageHome.acf.skill_3.skill_description}</p>
-                        </div>
-                }
-            </SkillList>
-        </HeroContent>
-    )
+            <HeroContent display={()=>{return isHomePage ? 'block' : 'none'}}>
+                <ProfilePhoto>
+                    {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
+                </ProfilePhoto>
+                <HeadingLine>
+                    {typeof pageHome === "undefined" ? null :  <h1>{pageHome.acf.heading}</h1>}
+                </HeadingLine>
+                <SubHeadingLine>
+                    {typeof pageHome === "undefined" ? null :  <p>{pageHome.acf.sub_heading}</p>}
+                </SubHeadingLine>
+                <SkillList>
+                    {
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
+                                <p>{pageHome.acf.skill_1.skill_description}</p>
+                            </div>
+                    }
+                    {
+
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
+                                <p>{pageHome.acf.skill_2.skill_description}</p>
+                            </div>
+                    }
+                    {
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
+                                <p>{pageHome.acf.skill_3.skill_description}</p>
+                            </div>
+                    }
+                </SkillList>
+            </HeroContent>
+        )
+
 }
 
 export default connect(Hero)
@@ -57,11 +59,12 @@ export default connect(Hero)
 const HeroContent = styled.div`
   text-align: center;
   background-color: ${variablesCSS.pink};
+  color: ${props => props.color};
   max-width: 70rem;
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
-
+  display:${props => props.display};
 `
 const ProfilePhoto = styled.div`
   max-width: 100%;
@@ -116,3 +119,4 @@ const SkillList = styled.div`
     color: ${variablesCSS.purple};
   }
 `
+
