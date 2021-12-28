@@ -9,6 +9,7 @@ export default {
   state: {
     theme: {
       isMenuOpen:false,
+      isHome: true,
     }
   },
   actions: {
@@ -18,6 +19,9 @@ export default {
       },
       closeMenu:({state}) => {
         state.theme.isMenuOpen = false;
+      },
+      hideHero:({state}) => {
+        state.theme.isHome = false;
       },
       beforeCSR: () => {
         import("webfontloader").then((WebFontLoader) => {

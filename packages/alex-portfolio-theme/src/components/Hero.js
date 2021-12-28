@@ -5,54 +5,67 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 import { fab } from '@fortawesome/free-brands-svg-icons'
 
 const Hero = ({state, actions}) => {
-
+    const data = state.source.get(state.router.link)
     const pageHome = state.source.page[9]
+
+    const isHomePage = data.isHome
+
+    console.log(isHomePage)
 
     useEffect(() => {
         actions.source.fetch("/home")
     }, [])
 
-    return(
+    if(isHomePage){
+        return(
 
-        <HeroContent>
-            <ProfilePhoto>
-                {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
-            </ProfilePhoto>
-            <HeadingLine>
-                {typeof pageHome === "undefined" ? null :  <h1>{pageHome.acf.heading}</h1>}
-            </HeadingLine>
-            <SubHeadingLine>
-                {typeof pageHome === "undefined" ? null :  <p>{pageHome.acf.sub_heading}</p>}
-            </SubHeadingLine>
-            <SkillList>
-                {
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
-                            <p>{pageHome.acf.skill_1.skill_description}</p>
-                        </div>
-                }
-                {
+            <HeroContent>
+                <ProfilePhoto>
+                    {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
+                </ProfilePhoto>
+                <HeadingLine>
+                    {typeof pageHome === "undefined" ? null :  <h1>{pageHome.acf.heading}</h1>}
+                </HeadingLine>
+                <SubHeadingLine>
+                    {typeof pageHome === "undefined" ? null :  <p>{pageHome.acf.sub_heading}</p>}
+                </SubHeadingLine>
+                <SkillList>
+                    {
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
+                                <p>{pageHome.acf.skill_1.skill_description}</p>
+                            </div>
+                    }
+                    {
 
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
-                            <p>{pageHome.acf.skill_2.skill_description}</p>
-                        </div>
-                }
-                {
-                    typeof pageHome === "undefined" ? null :
-                        <div>
-                            <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
-                            <p>{pageHome.acf.skill_3.skill_description}</p>
-                        </div>
-                }
-            </SkillList>
-        </HeroContent>
-    )
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
+                                <p>{pageHome.acf.skill_2.skill_description}</p>
+                            </div>
+                    }
+                    {
+                        typeof pageHome === "undefined" ? null :
+                            <div>
+                                <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
+                                <p>{pageHome.acf.skill_3.skill_description}</p>
+                            </div>
+                    }
+                </SkillList>
+            </HeroContent>
+        )
+    }else{
+        return (<HeroEmpty></HeroEmpty>)
+    }
 }
 
 export default connect(Hero)
+
+const isPageHomeActive = {
+    true: true,
+    false: false
+}
 
 const HeroContent = styled.div`
   text-align: center;
@@ -61,7 +74,7 @@ const HeroContent = styled.div`
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
-
+  display:block;
 `
 const ProfilePhoto = styled.div`
   max-width: 100%;
@@ -115,4 +128,7 @@ const SkillList = styled.div`
     margin-top: 2rem;
     color: ${variablesCSS.purple};
   }
+`
+const HeroEmpty = styled.div`
+  display: none;
 `

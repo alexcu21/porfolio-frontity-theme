@@ -74,7 +74,7 @@ const ArticleProject = styled.article`
     flex-direction: column;
   }
   
-  &:nth-child(odd){
+  &:nth-of-type(odd){
     flex-direction: row-reverse;
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
