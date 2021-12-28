@@ -21,7 +21,7 @@ const settings = {
             {
               type:"project",
               endpoint:"project",
-              archive:"/project-archive"
+              archive:"/all-projects"
             }
           ],
           "taxonomies": [

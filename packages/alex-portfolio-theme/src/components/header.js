@@ -5,11 +5,13 @@ import variablesCSS from "./css/variablesCss";
 
 
 const Header = ({ state }) => {
+
     return (
         <>
             <Container>
                 <Link href='/'>Home</Link>
-                <Link href='/project-archive'>Projects</Link>
+                <Link href='/all-projects'>Projects</Link>
+                <Link href='/archive'>Blog</Link>
             </Container>
         </>
     );

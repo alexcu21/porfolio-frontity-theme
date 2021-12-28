@@ -15,7 +15,7 @@ const Hero = ({state, actions}) => {
 
         return(
 
-            <HeroContent display={()=>{return isHomePage ? 'block' : 'none'}}>
+            <HeroContent active={()=>{return isHomePage ? 'block' : 'none'}}>
                 <ProfilePhoto>
                     {typeof pageHome === "undefined" ? null :  <img src={pageHome.acf.profile_photo} alt="profile photo"/>}
                 </ProfilePhoto>
@@ -64,7 +64,7 @@ const HeroContent = styled.div`
   margin: 0 auto;
   margin-top: 2em;
   margin-bottom: 2em;
-  display:${props => props.display};
+  display:${props => props.active};
 `
 const ProfilePhoto = styled.div`
   max-width: 100%;
