@@ -102,7 +102,9 @@ const ArticleProject = styled.article`
           border: 1px solid ${variablesCSS.pink};
           margin: 1.5rem;
           text-decoration: none;
-          
+          @media ${variablesCSS.mobilQuery}{
+            margin: 0.5rem;
+          }
           &:hover {
             background-color: ${variablesCSS.pink};
             color: ${variablesCSS.purple};
@@ -146,6 +148,9 @@ const Info = styled.div`
 `
 
 const InfoWrapper = styled.div`
+  a{
+    text-decoration: none;
+  }
   h4{
     text-align: center;
     font-size: 2rem;

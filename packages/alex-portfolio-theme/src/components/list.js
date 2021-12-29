@@ -58,6 +58,7 @@ const Items = styled.div`
       font-size: 1.2rem;
       font-weight: bold;
       margin: 1.1rem 0;
+      text-decoration: none;
     }
   & > div{
     margin: 12px 0;
