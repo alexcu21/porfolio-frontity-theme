@@ -27,10 +27,10 @@ const Projects = ({state, actions}) => {
                             <Link link={project.link} key={project.id}>
                                 <article key={id}>
                                     <h3>{project.title.rendered}</h3>
-                                    <img src={project.acf.screenshot.url} alt={project.acf.screenshot.name}/>
-                                        <Technologies
-                                            techId={project.technology}
-                                        />
+                                    <ImageContainer>
+                                        <img src={project.acf.screenshot.url} alt={project.acf.screenshot.name}/>
+                                    </ImageContainer>
+                                    <Technologies techId={project.technology}/>
                                 </article>
 
                             </Link>
@@ -58,8 +58,16 @@ const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   column-gap: 1.5rem;
+  justify-items:center;
   text-decoration: none;
   margin-bottom: 2rem;
+  @media ${variablesCSS.tabletQuery}{
+    grid-template-columns: repeat(2, 1fr);
+  }
+  @media ${variablesCSS.mobilQuery}{
+    grid-template-columns: repeat(1, 1fr);
+  }
+ 
   a{
     text-decoration: none;
   }
@@ -69,13 +77,26 @@ const GridContainer = styled.div`
     text-decoration: none;
   }
   article{
+    
     border: 1px solid ${variablesCSS.purple};
     background: ${variablesCSS.pink};
     text-decoration: none;
-    height: 35vh;
+    min-height: 40%;
+    max-height: 42rem;
+    height: 28rem;
     padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
     &:hover{
       box-shadow: 12px 12px ${variablesCSS.purple};
+    }
+
+    @media ${variablesCSS.tabletQuery}{
+      margin-bottom:1rem;
+    }
+    @media ${variablesCSS.mobilQuery}{
+      margin-bottom:1rem;
     }
   }
   ul{
@@ -92,5 +113,10 @@ const GridContainer = styled.div`
     background-color: ${variablesCSS.purple};
     color: ${variablesCSS.white};
     border-radius: 1rem;
+  }
+`
+const ImageContainer = styled.div`
+  img{
+    width: 100%;
   }
 `
