@@ -1,24 +1,30 @@
 import React from 'react'
-import {connect, styled} from "frontity";
+import { connect, styled, useConnect } from "frontity";
+import Link from "@frontity/components/link";
 import variablesCSS from './css/variablesCss'
 
-const Link = ({ href, actions, children }) => {
+const PortfolioLink = ({ children, ...props }) => {
+    const { state, actions } = useConnect()
+
+    const onClick = () => {
+        if(state.theme.isMobileMenuOpen){
+            actions.theme.closeMobileMenu();
+        }
+    }
+
     return(
 
-            <Anchor
-                href={href}
-                onClick={e => {
-                    e.preventDefault()
-                    actions.router.set(href)
-                }}
+            <Link
+                {...props}
+                onClick={onClick}
             >
                 {children}
-            </Anchor>
+            </Link>
 
     )
 }
 
-export default connect(Link)
+export default connect(PortfolioLink, {injectProps: false})
 
 const Anchor = styled.a`
   color:${variablesCSS.purple};

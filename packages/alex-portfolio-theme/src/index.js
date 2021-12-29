@@ -9,7 +9,10 @@ export default {
   state: {
     theme: {
       isMenuOpen:false,
-      isHome: true,
+      menu:[
+          ['Home', '/'],
+          ['My Projects', '/all-projects']
+      ],
     }
   },
   actions: {
@@ -19,9 +22,6 @@ export default {
       },
       closeMenu:({state}) => {
         state.theme.isMenuOpen = false;
-      },
-      hideHero:({state}) => {
-        state.theme.isHome = false;
       },
       beforeCSR: () => {
         import("webfontloader").then((WebFontLoader) => {

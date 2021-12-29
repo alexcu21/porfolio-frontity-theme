@@ -1,8 +1,7 @@
 import {useEffect} from 'react'
 import {connect, styled} from "frontity";
 import Technologies from "../components/technologies";
-import Project from "./project";
-import Link from "./link";
+import Link from "@frontity/components/link";
 import variablesCSS from './css/variablesCss'
 
 const ProjectList = ({state, actions}) => {
@@ -24,7 +23,7 @@ const ProjectList = ({state, actions}) => {
                                 <img src={project.acf.screenshot.url} alt={project.acf.screenshot.name}/>
                                 <Info>
                                     <InfoWrapper>
-                                        <Link href={project.link}>
+                                        <Link link={project.link}>
                                             <h4 dangerouslySetInnerHTML={{__html:project.title.rendered}}></h4>
                                         </Link>
                                         <TechWrapper>
@@ -103,7 +102,9 @@ const ArticleProject = styled.article`
           border: 1px solid ${variablesCSS.pink};
           margin: 1.5rem;
           text-decoration: none;
-          
+          @media ${variablesCSS.mobilQuery}{
+            margin: 0.5rem;
+          }
           &:hover {
             background-color: ${variablesCSS.pink};
             color: ${variablesCSS.purple};
@@ -147,6 +148,9 @@ const Info = styled.div`
 `
 
 const InfoWrapper = styled.div`
+  a{
+    text-decoration: none;
+  }
   h4{
     text-align: center;
     font-size: 2rem;
