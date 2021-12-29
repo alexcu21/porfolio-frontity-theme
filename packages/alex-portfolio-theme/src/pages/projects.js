@@ -1,6 +1,8 @@
 import React, {useEffect} from 'react'
 import {styled,connect} from "frontity";
 import Technologies from "../components/technologies";
+import Link from "@frontity/components/link";
+import variablesCSS from "../components/css/variablesCss"
 
 const Projects = ({state, actions}) => {
     useEffect(() => {
@@ -12,33 +14,83 @@ const Projects = ({state, actions}) => {
     const data = state.source.get(state.router.link)
 
     return(
-        <>
-            <h2>Projects</h2>
-            <p>Projects I've participated</p>
+        <ProjectsWrapper>
+            <h2>My Projects</h2>
+
+            <GridContainer>
             {
+
                 data.items.map( ({id}) => {
                     const project = state.source.project[id]
 
                     return(
-                        <GridContainer>
-                            <article key={id}>
-                                <h3>{project.title.rendered}</h3>
-                                <ul>
-                                    <Technologies
-                                        techId={project.technology}
-                                    />
-                                </ul>
-                            </article>
-                        </GridContainer>
+                            <Link link={project.link} key={project.id}>
+                                <article key={id}>
+                                    <h3>{project.title.rendered}</h3>
+                                    <img src={project.acf.screenshot.url} alt={project.acf.screenshot.name}/>
+                                        <Technologies
+                                            techId={project.technology}
+                                        />
+                                </article>
+
+                            </Link>
+
                     )
                 })
+
             }
-        </>
+            </GridContainer>
+        </ProjectsWrapper>
     )
 }
 
 export default connect(Projects)
 
+const ProjectsWrapper = styled.section`
+  margin: 0 auto;
+  h2{
+    font-size: 4rem;
+    text-align: center;
+  }
+`
+
 const GridContainer = styled.div`
-  
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  column-gap: 1.5rem;
+  text-decoration: none;
+  margin-bottom: 2rem;
+  a{
+    text-decoration: none;
+  }
+  h3{
+    text-align: center;
+    margin-bottom: 1rem;
+    text-decoration: none;
+  }
+  article{
+    border: 1px solid ${variablesCSS.purple};
+    background: ${variablesCSS.pink};
+    text-decoration: none;
+    height: 35vh;
+    padding: 1rem;
+    &:hover{
+      box-shadow: 12px 12px ${variablesCSS.purple};
+    }
+  }
+  ul{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    margin-top:1.2rem;
+  }
+  li{
+    list-style-type: none;
+    text-decoration: none;
+    margin:0.1rem 0;
+    padding: 0.2rem 0.5rem;
+    background-color: ${variablesCSS.purple};
+    color: ${variablesCSS.white};
+    border-radius: 1rem;
+  }
 `
