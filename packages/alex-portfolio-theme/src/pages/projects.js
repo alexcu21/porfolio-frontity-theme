@@ -34,7 +34,6 @@ const Projects = ({state, actions}) => {
                                 </article>
 
                             </Link>
-
                     )
                 })
 
@@ -73,7 +72,6 @@ const GridContainer = styled.div`
   }
   h3{
     text-align: center;
-    margin-bottom: 1rem;
     text-decoration: none;
   }
   article{
@@ -84,7 +82,7 @@ const GridContainer = styled.div`
     min-height: 40%;
     max-height: 42rem;
     height: 28rem;
-    padding: 1rem;
+    padding: 1rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -103,7 +101,6 @@ const GridContainer = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    margin-top:1.2rem;
   }
   li{
     list-style-type: none;

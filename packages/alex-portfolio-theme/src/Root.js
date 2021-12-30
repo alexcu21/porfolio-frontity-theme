@@ -73,7 +73,7 @@ const HeaderContainer = styled.header`
   background-color: ${variablesCSS.pink};
   padding: 2em 7em 4em 7em;
   @media ${variablesCSS.mobilQuery}{
-    padding:0.6rem;
+    padding:2rem;
   }
 `
 

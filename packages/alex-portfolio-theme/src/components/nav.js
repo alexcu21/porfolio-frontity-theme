@@ -1,4 +1,3 @@
-import React from "react";
 import { connect, styled } from "frontity";
 import Link from "./link";
 import variablesCSS from "./css/variablesCss"
@@ -10,8 +9,18 @@ import variablesCSS from "./css/variablesCss"
  */
 const Nav = ({ state }) => (
     <NavContainer>
-        <Link href='/'>Home</Link>
-        <Link href='/projects-archive'>Projects</Link>
+        {state.theme.menu.map(([name, link]) => {
+            // Check if the link matched the current page url
+            const isCurrentPage = state.router.link === link;
+            return (
+                <NavItem key={name}>
+                    {/* If link url is the current page, add `aria-current` for a11y */}
+                    <Link link={link} aria-current={isCurrentPage ? "page" : undefined}>
+                        {name}
+                    </Link>
+                </NavItem>
+            );
+        })}
     </NavContainer>
 );
 
@@ -43,9 +52,12 @@ const NavItem = styled.div`
     line-height: 2em;
     border-bottom: 2px solid;
     border-bottom-color: transparent;
+    font-weight: bold;
+    font-size: 1.5rem;
+    text-decoration: none;
     /* Use for semantic approach to style the current link */
     &[aria-current="page"] {
-      border-bottom-color: ${variablesCSS.white};
+      border-bottom-color: ${variablesCSS.purple};
     }
   }
   &:first-of-type {

@@ -8,20 +8,20 @@ export default {
   },
   state: {
     theme: {
-      isMenuOpen:false,
+      isMobileMenuOpen:false,
       menu:[
           ['Home', '/'],
-          ['My Projects', '/all-projects']
+          ['My Projects', '/all-projects'],
       ],
     }
   },
   actions: {
     theme: {
-      openMenu:({state}) => {
-        state.theme.isMenuOpen = true;
+      toggleMobileMenu:({state}) => {
+        state.theme.isMobileMenuOpen = !state.theme.isMobileMenuOpen;
       },
-      closeMenu:({state}) => {
-        state.theme.isMenuOpen = false;
+      closeMobileMenu:({state}) => {
+        state.theme.isMobileMenuOpen = false;
       },
       beforeCSR: () => {
         import("webfontloader").then((WebFontLoader) => {

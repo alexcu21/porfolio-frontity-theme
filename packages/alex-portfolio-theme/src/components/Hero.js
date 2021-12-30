@@ -107,6 +107,8 @@ const SkillList = styled.div`
   margin:3rem 0;
   @media ${variablesCSS.mobilQuery}{
     flex-direction: column;
+    width: 50%;
+    margin: 0 auto;
   }
   p{
     font-weight: 700;

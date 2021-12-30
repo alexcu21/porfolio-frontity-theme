@@ -14,10 +14,10 @@ function MobileMenu({ state, actions }) {
                         {/* Add some style to the body when menu is open,
             to prevent body scroll */}
                         <Global styles={{ body: { overflowY: "hidden" } }} />
-                        <CloseIcon color="white" size="20px" />
+                        <CloseIcon color={variablesCSS.purple} size="35px" />
                     </>
                 ) : (
-                    <HamburgerIcon color="white" size="24px" />
+                    <HamburgerIcon color={variablesCSS.purple} size="35px" />
                 )}
             </MenuToggle>
             {/* If the menu is open, render the menu modal */}
@@ -32,12 +32,12 @@ const MenuToggle = styled.button`
   top: 24px;
   background: transparent;
   border: 0;
-  color: ${variablesCSS.white};
+  color: ${variablesCSS.purple};
   z-index: 5;
   height: 40px;
   width: 40px;
   display: none;
-  @media (max-width: ${variablesCSS.mobil}) {
+  @media ${variablesCSS.mobilQuery} {
     display: flex;
     align-items: center;
     justify-content: center;

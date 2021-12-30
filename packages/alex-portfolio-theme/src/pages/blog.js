@@ -2,19 +2,13 @@
 
 import React from "react"
 import { connect } from "frontity"
+import List from "../components/list";
 
 const Blog = ({ state }) => {
     const data = state.source.get(state.router.link)
 
     return (
         <div>
-            {data.items.map((item) => {
-                return (
-                    <div key={item.id}>
-                        {item.type} – {item.id} – {item.link}
-                    </div>
-                )
-            })}
         </div>
     )
 }

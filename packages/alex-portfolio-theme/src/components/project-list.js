@@ -35,8 +35,8 @@ const ProjectList = ({state, actions}) => {
                                         <p dangerouslySetInnerHTML={{__html:project.content.rendered}}></p>
                                     </InfoWrapper>
                                     <LinksWrapper>
-                                        <a className="btn" href={project.acf.project_link}>See Project</a>
-                                        <a className="btn" href={project.acf.github_link}>See Code</a>
+                                        <a className="btn" target="_blank" href={project.acf.project_link}>See Project</a>
+                                        <a className="btn" target="_blank" href={project.acf.github_link}>See Code</a>
                                     </LinksWrapper>
                                 </Info>
 
@@ -100,7 +100,6 @@ const ArticleProject = styled.article`
           color: ${variablesCSS.pink};
           padding: 0.5rem 0.5rem;
           border: 1px solid ${variablesCSS.pink};
-          margin: 1.5rem;
           text-decoration: none;
           @media ${variablesCSS.mobilQuery}{
             margin: 0.5rem;
@@ -164,11 +163,13 @@ const LinksWrapper = styled.div`
   text-align: center;
   margin-top: 2rem;
   margin-bottom: 2rem;
-
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  column-gap: 2rem;
   a.btn{
     padding: 0.5rem 0.5rem;
     border: 1px solid ${variablesCSS.purple};
-    margin: 1.5rem;
     text-decoration: none;
     &:hover{
       background-color:${variablesCSS.purple};

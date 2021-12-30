@@ -5,7 +5,7 @@ const variablesCSS = {
     mobil: '411px',
     tablet: '768px',
     desktop: '1280px',
-    mobilQuery: 'screen and (max-width: 420px)',
+    mobilQuery: 'screen and (max-width: 540px)',
     tabletQuery: 'screen and (max-width: 1024px)',
 
     //colors

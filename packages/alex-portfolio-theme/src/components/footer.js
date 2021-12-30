@@ -85,4 +85,7 @@ const ContactWrapper = styled.div`
 const CopyWrapper = styled.div`
   line-height: 2.5rem;
   margin-top: 2rem;
+  @media ${variablesCSS.mobilQuery}{
+    margin-top: 0;
+  }
 `
