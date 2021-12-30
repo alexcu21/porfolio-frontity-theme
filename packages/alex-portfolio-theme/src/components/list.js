@@ -6,12 +6,13 @@ import variablesCSS from "./css/variablesCss";
 
 const List = ({state}) => {
     const data = state.source.get(state.router.link)
+    console.log(data.items.slice(0, 4))
     return(
         <>
             <HomePostListStyles>
                 <h2>Posts (from others) You Must Read</h2>
                 <Items>
-                    {data.items.map(item => {
+                    {data.items.slice(0,6).map(item => {
                         const post = state.source.post[item.id]
                         return(
                             <PostWrapper key={item.id}>
