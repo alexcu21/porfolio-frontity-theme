@@ -70,5 +70,10 @@ const PostWrapper = styled.div`
   background-color:${variablesCSS.pink};
   margin: 1rem!important;
   box-shadow: 12px 12px ${variablesCSS.purple};
-  
+  a{
+    transition: opacity .3s ease;
+    &:hover{
+      opacity: .7;
+    }
+  }
 `

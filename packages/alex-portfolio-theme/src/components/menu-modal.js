@@ -5,6 +5,7 @@ import variablesCSS from "./css/variablesCss";
 const MenuModal = ({ state }) => {
     const { menu } = state.theme;
     const isThereLinks = menu != null && menu.length > 0;
+    const Url = state.source.url
 
     return (
         <>
@@ -18,8 +19,11 @@ const MenuModal = ({ state }) => {
                         aria-current={state.router.link === link ? "page" : undefined}
                     >
                         {name}
+
                     </MenuLink>
                 ))}
+                <a href={Url + "/wp-content/uploads/2021/12/Portfolio-AlexCuadraResume.pdf"} target="_blank">Download CV</a>
+
             </MenuContent>
         </>
     );
@@ -38,6 +42,15 @@ const MenuOverlay = styled.div`
 
 const MenuContent = styled.div`
   z-index: 3;
+  a{
+    width: 100%;
+    display: inline-block;
+    outline: 0;
+    font-size: 20px;
+    text-align: center;
+    padding: 1.2rem 0;
+    text-decoration: none;
+  }
 `;
 
 const MenuLink = styled(Link)`
