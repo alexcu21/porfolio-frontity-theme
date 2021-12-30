@@ -6,7 +6,6 @@ import variablesCSS from "./css/variablesCss";
 
 const List = ({state}) => {
     const data = state.source.get(state.router.link)
-    console.log(data.items.slice(0, 4))
     return(
         <>
             <HomePostListStyles>
