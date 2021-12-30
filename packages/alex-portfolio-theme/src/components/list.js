@@ -9,7 +9,7 @@ const List = ({state}) => {
     return(
         <>
             <HomePostListStyles>
-                <h2>Posts You Must Read</h2>
+                <h2>Posts (from others) You Must Read</h2>
                 <Items>
                     {data.items.map(item => {
                         const post = state.source.post[item.id]

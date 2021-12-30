@@ -29,6 +29,7 @@
     "@frontity/wp-source": "^1.11.2",
     "alex-portfolio-theme": "file:packages/alex-portfolio-theme",
     "frontity": "^1.14.3",
+    "react-responsive-masonry": "^2.1.4",
     "webfontloader": "^1.6.28"
   }
 }

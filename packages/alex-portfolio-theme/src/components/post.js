@@ -19,8 +19,8 @@ const Post = ({state, element}) => {
                     <p dangerouslySetInnerHTML = {{__html:post.content.rendered}}></p>
                 </ProjectInfo>
                 <ButtonsWrapper>
-                    <a className="btn" href={post.acf.project_link}>Live Project</a>
-                    <a className="btn" href={post.acf.github_link}>Check Code</a>
+                    <a className="btn" target="_blank" href={post.acf.project_link}>Live Project</a>
+                    <a className="btn" target="_blank" href={post.acf.github_link}>Check Code</a>
                 </ButtonsWrapper>
             </ProjectWrapper>
         )
@@ -30,8 +30,8 @@ const Post = ({state, element}) => {
             <div>
                 <h2>{post.title.rendered}</h2>
                 <PostInfo>
-                    <p><strong>Posted:</strong>{post.date}</p>
-                    <p><strong>Author:</strong>{author.name}</p>
+                    <p><strong>Author: </strong>{post.acf.source_name}</p>
+                    <p><strong>Author Link: </strong><a href={post.acf.source_link} target="_blank">{post.acf.source_name}</a></p>
                 </PostInfo>
                 <div dangerouslySetInnerHTML={ {__html: post.content.rendered} }  />
             </div>
@@ -42,10 +42,10 @@ const Post = ({state, element}) => {
 export default connect(Post)
 
 const PostInfo = styled.div`
-  background-image: linear-gradient(to right, #f4f4f4, #fff);
+  background-image: linear-gradient(to right, ${variablesCSS.pink}, ${variablesCSS.white});
   margin-bottom: 1em;
   padding: 0.5em;
-  border-left: 4px solid lightseagreen;
+  border-left: 4px solid ${variablesCSS.purple};
   font-size: 0.8em;
   
   & > p{
