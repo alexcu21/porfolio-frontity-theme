@@ -78,6 +78,11 @@ const ArticleProject = styled.article`
     background-color: ${variablesCSS.purple};
     box-shadow: 12px 12px ${variablesCSS.pink};
     color:${variablesCSS.white};
+    p{
+      a{
+        color: ${variablesCSS.pink};
+      }
+    }
     @media ${variablesCSS.mobilQuery}{
       flex-direction: column;
     }
@@ -94,8 +99,6 @@ const ArticleProject = styled.article`
       border-radius: 1rem;
       font-weight: bold;
     }
-
-    
         a.btn {
           color: ${variablesCSS.pink};
           padding: 0.5rem 0.5rem;
@@ -109,7 +112,6 @@ const ArticleProject = styled.article`
             color: ${variablesCSS.purple};
           }
         }
-    
   }
   display: flex;
   margin: 4rem 1rem;
@@ -131,12 +133,21 @@ const ArticleProject = styled.article`
         max-width: 100%;
       }
     }
-  
-`
+`;
+
 const Info = styled.div`
   padding: 1.2rem;
   margin-left: 1rem;
   max-width: 42rem;
+ p{
+   a{
+     color: ${variablesCSS.purple};
+     transition: opacity .3s ease;
+     &:hover{
+       opacity: .7;
+     }
+   }
+ }
   @media ${variablesCSS.mobilQuery}{
     padding:0.7rem;
     margin-left:0;
@@ -144,7 +155,7 @@ const Info = styled.div`
   @media ${variablesCSS.tabletQuery}{
     max-width: 100%;
   }
-`
+`;
 
 const InfoWrapper = styled.div`
   a{
@@ -157,7 +168,7 @@ const InfoWrapper = styled.div`
     letter-spacing: 0.01em;
     margin: 1rem auto;
   }
-`
+`;
 
 const LinksWrapper = styled.div`
   text-align: center;

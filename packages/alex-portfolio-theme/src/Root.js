@@ -104,7 +104,7 @@ const Main = styled.main`
   }
 `
 
-const FooterContainer = styled.div`
+const FooterContainer = styled.footer`
   height: 40vh;
  background-color: ${variablesCSS.purple};
   color:${variablesCSS.white};

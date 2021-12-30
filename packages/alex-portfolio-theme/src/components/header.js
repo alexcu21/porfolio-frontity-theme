@@ -1,19 +1,18 @@
 import React from "react";
 import { connect, styled } from "frontity";
-import Link from "./link";
 import Nav from './nav'
 import MobileMenu from "./menu";
 import variablesCSS from "./css/variablesCss";
 
 
 const Header = ({ state }) => {
-
     return (
         <>
             <Container>
                 <MobileMenu/>
             </Container>
             <Nav/>
+
         </>
     );
 };
@@ -31,5 +30,7 @@ const Container = styled.div`
   flex-direction: row;
   justify-content: space-around;
 `;
+
+
 
 
