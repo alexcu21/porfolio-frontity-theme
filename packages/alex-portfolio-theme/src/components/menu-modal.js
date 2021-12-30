@@ -50,7 +50,7 @@ const MenuLink = styled(Link)`
   text-decoration: none;
   &:hover,
   &:focus {
-    background-color: rgba(0, 0, 0, 0.05);
+    background-color: ${variablesCSS.purple};
   }
   /* styles for active link */
   &[aria-current="page"] {
