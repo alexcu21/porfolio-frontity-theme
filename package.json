@@ -15,7 +15,12 @@
     "build": "frontity build",
     "serve": "frontity serve"
   },
-  "prettier": {},
+  "prettier": {
+    "trailingComma": "es5",
+    "tabWidth": 4,
+    "semi": false,
+    "singleQuote": true
+  },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^1.3.0-beta3",
     "@fortawesome/free-brands-svg-icons": "^5.15.4",

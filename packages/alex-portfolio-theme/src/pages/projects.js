@@ -56,6 +56,7 @@ const ProjectsWrapper = styled.section`
 const GridContainer = styled.div`
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  //grid-template-rows: masonry;
   column-gap: 1.5rem;
   justify-items:center;
   text-decoration: none;
