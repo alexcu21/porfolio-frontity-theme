@@ -182,6 +182,8 @@ const LinksWrapper = styled.div`
     padding: 0.5rem 0.5rem;
     border: 1px solid ${variablesCSS.purple};
     text-decoration: none;
+    transition: color .5s ease;
+    transition: background-color .5s ease;
     &:hover{
       background-color:${variablesCSS.purple};
       color:${variablesCSS.pink};
