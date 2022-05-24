@@ -2,7 +2,7 @@
 
 This project was bootstrapped with [Frontity](https://frontity.org/).
 
-you can see the production environment [here](https://portfolio-theme.vercel.app/)
+you can see the production environment [here](https://www.alexcuadra.dev/)
 
 Hosted in [Vercel](https://vercel.com/)
 WordPress site hosted in [Pantheon](https://pantheon.io/)

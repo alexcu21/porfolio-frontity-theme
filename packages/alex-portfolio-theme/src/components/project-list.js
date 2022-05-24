@@ -139,6 +139,7 @@ const Info = styled.div`
   padding: 1.2rem;
   margin-left: 1rem;
   max-width: 42rem;
+  width: 100%;
  p{
    a{
      color: ${variablesCSS.purple};
