@@ -29,7 +29,9 @@ const Hero = ({state, actions}) => {
                     {
                         typeof pageHome === "undefined" ? null :
                             <div>
-                                <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
+                               <a href={pageHome.acf.github} target="_blank">
+                                   <FontAwesomeIcon icon={pageHome.acf.skill_1.skill_icon} />
+                               </a>
                                 <p>{pageHome.acf.skill_1.skill_description}</p>
                             </div>
                     }
@@ -37,14 +39,18 @@ const Hero = ({state, actions}) => {
 
                         typeof pageHome === "undefined" ? null :
                             <div>
-                                <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
+                                <a href={pageHome.acf.linkedin} target="_blank">
+                                    <FontAwesomeIcon icon={pageHome.acf.skill_2.skill_icon} />
+                                </a>
                                 <p>{pageHome.acf.skill_2.skill_description}</p>
                             </div>
                     }
                     {
                         typeof pageHome === "undefined" ? null :
                             <div>
-                                <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
+                                <a href={pageHome.acf.wordpress} target="_blank">
+                                    <FontAwesomeIcon icon={pageHome.acf.skill_3.skill_icon} />
+                                </a>
                                 <p>{pageHome.acf.skill_3.skill_description}</p>
                             </div>
                     }
